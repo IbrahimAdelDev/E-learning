@@ -1,0 +1,1745 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --flag: 0;
+    --bg-color-1: #ffffff; 
+    --bg-color-2: #eeeeee;
+    --small-baner: #eeeeee;
+    --bg-color-3: #4b4a4ab1;
+    --header-color-1-light: #1f4e6f;
+    --header-color-1-dark: #0b2f48;
+    --text-color-1: #000000;
+    --text-color-2:#2c3e50; 
+    --text-color-3: #888;
+    --text-color-4: #323232;
+    --border-color: #bebbbb;
+    --header-color-1-light2: #3e9de1;
+    --text-color: #000000;
+}
+
+/* dark */
+
+:root.dark{
+    --flag: 1;
+    --bg-color-1: #212121; 
+    --bg-color-2: #2d2e2f;
+    --small-baner: #cbcbcb;
+    --bg-color-3: #4b4a4ab1;
+    --header-color-1-light: #ffffff;
+    --header-color-1-dark: #9b520d;
+    --text-color-1: #ff993a;
+    --text-color-2:#ffffff; 
+    --text-color-3: #cbcbcb;
+    --text-color-4: #ffffff;
+    --border-color: #373636;
+    --header-color-1-light2: #3e9de1;
+    --text-color: #ffffff;
+}
+
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* body */
+
+body{
+    font-family: inherit;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    background-color: var(--bg-color-2);
+    width: 100%;
+}
+
+/* navbar */
+
+header{
+    width: 100%;
+    height: 60px;
+    background-color: var(--bg-color-1);
+    color: var(--header-color-1-light);
+    font-size: 20px;
+    padding: 0 20px;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-brand{
+    display: flex;
+    align-items: center;
+}
+
+.header-brand i{
+    cursor: pointer;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    color: inherit;
+    font-weight: 600;
+    margin: 0 0 0 15px;
+    text-decoration: none;
+}
+
+svg{
+    width: 60px;
+}
+
+rect{
+    fill: var(--bg-color-1);
+}
+
+path{
+    fill: var(--header-color-1-light);
+}
+
+.header-search{
+    position: relative;
+    height: auto;
+}
+
+.header-search input{
+    padding: 10px 20px;
+    outline: none;
+    background-color: var(--bg-color-2);
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    width: 300px;
+    color: var(--text-color);
+}
+
+.search-icon{
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    border: none;
+    background-color: inherit;
+    color: var(--header-color-1-light);
+    cursor: pointer;
+}
+
+
+.header-links ul{
+    display: flex;
+    list-style: none;
+}
+
+.header-links ul li{
+    background-color: var(--bg-color-2);
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header-links ul li a{
+    color: inherit;
+}
+
+.mini-search-icon{
+    display: none;
+}
+
+/* sidebar */
+
+aside{
+    width: 60px;
+    height: calc(100vh - 60px);
+    background-color: var(--bg-color-1);
+    border-right: var(--border-color) 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    transition:width .2s linear;
+    z-index: 10;
+    text-wrap: nowrap;
+    overflow: hidden;
+    color: var(--header-color-1-light);
+}
+
+aside.active{
+    width: 220px;
+}
+
+
+aside nav ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+}
+
+aside nav ul li{
+    height: 60px;
+    cursor: pointer;
+    color: inherit;
+}
+
+aside nav ul li a{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    display: flex;
+    color: inherit;
+    font-size: 18px;
+    gap: 0px;
+    border-radius: 0px;
+    transition: all .2s linear;
+}
+
+aside nav ul li a:hover{
+    background-color: var(--bg-color-2);
+    gap: 10px;
+    border-radius: 15px;
+}
+
+
+aside nav ul li a i{
+    padding: 0 20px;
+}
+
+aside nav ul li a span{
+    position: relative;
+    left: 5px;
+}
+
+/* sidebar-footer */
+
+.sidebar-footer{
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-footer a{
+    height: 60px;
+    display: flex;
+    color: inherit;
+    padding: 20px 0;
+    font-size: 18px;
+    gap: 0;
+    border-radius: 0px;
+    transition: all .2s linear;
+}
+
+.sidebar-footer a:hover{
+    background-color: var(--bg-color-2);
+    gap: 10px;
+    border-radius: 15px;
+}
+
+.sidebar-footer a i{
+    padding: 0 20px;
+}
+
+.sidebar-footer a span{
+    position: relative;
+    left: 5px;
+}
+
+
+
+/* bage-body */
+
+.bage-body{
+    margin-left: 60px;
+    transition: .2s linear;
+    font-size: inherit;
+    width: calc(100% - 60px);
+    padding: 30px 130px;
+    backdrop-filter: unset;
+    min-height: calc(100vh - 120px);
+}
+
+
+.bage-body.active{
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 30px 60px;
+}
+
+.quick-sec h1{
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    font-family: inherit;
+    color: var(--text-color-2);
+}
+
+.quick-sec .quick-parent{
+    margin: 30px 0 0 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.quick-sec .quick-parent > div{
+    background-color: var(--bg-color-1);
+    height: fit-content;
+    border-radius: 10px;
+    margin: 10px auto;
+    
+}
+
+.quick-sec .quick-parent .likes-sec{
+    width: 250px;
+}
+
+.quick-sec .quick-parent .likes-sec div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 10px 20px;
+}
+
+.quick-sec .quick-parent .likes-sec h3{
+    font-weight: 600;
+    color: var(--text-color-2);
+    margin: 20px 0 20px 20px;
+}
+
+.quick-sec .quick-parent .likes-sec p{
+    font-weight: 300;
+    color: var(--text-color-3);
+    margin: 0;
+}
+
+.quick-sec .quick-parent .likes-sec p span{
+    font-weight: 500;
+    color: var(--text-color-1);
+    margin: 0;
+}
+
+.quick-sec .quick-parent .likes-sec a{
+    font-weight: 300;
+    color: var(--bg-color-1);
+    background-color: var(--header-color-1-light);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+.quick-sec .quick-parent .likes-sec a:hover{
+    color: var(--small-baner);
+    background-color: var(--header-color-1-dark);
+}
+
+.quick-sec .quick-parent .categories-sec{
+    width: 250px;
+}
+
+.quick-sec .quick-parent .categories-sec h3{
+    font-weight: 600;
+    color: var(--text-color-2);
+    margin: 20px 0 20px 20px;
+}
+
+.quick-sec .quick-parent .categories-sec div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0 15px 15px 15px;
+}
+
+
+.quick-sec .quick-parent .categories-sec div a{
+    width: fit-content;
+    background-color: var(--bg-color-2);
+    border-radius: 7px;
+    margin: 5px 6px;
+    padding: 9px 12px;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.quick-sec .quick-parent .categories-sec div a:hover{
+    background-color: var(--header-color-1-dark);
+    color: var(--bg-color-2);
+}
+
+.quick-sec .quick-parent .categories-sec div a span{
+    color: var(--text-color-3);
+    margin: 0 0 0 8px;
+}
+
+.quick-sec .quick-parent .topics-sec{
+    width: 250px;
+}
+
+.quick-sec .quick-parent .topics-sec h3{
+    font-weight: 600;
+    color: var(--text-color-2);
+    margin: 20px 0 20px 20px;
+}
+
+.quick-sec .quick-parent .topics-sec div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0 15px 15px 15px;
+}
+
+.quick-sec .quick-parent .topics-sec div a{
+    width: fit-content;
+    background-color: var(--bg-color-2);
+    border-radius: 7px;
+    margin: 5px 6px;
+    padding: 9px 13px;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.quick-sec .quick-parent .topics-sec div a:hover{
+    background-color: var(--header-color-1-dark);
+    color: var(--bg-color-2);
+}
+
+.quick-sec .quick-parent .topics-sec div a span{
+    color: var(--text-color-3);
+    margin: 0 0 0 8px;
+}
+
+
+.quick-sec .quick-parent .tutor-sec{
+    width: 250px;
+}
+
+.quick-sec .quick-parent .tutor-sec h3{
+    font-weight: 600;
+    color: var(--text-color-2);
+    margin: 20px 0 20px 20px;
+}
+
+.quick-sec .quick-parent .tutor-sec div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0 15px 15px 15px;
+}
+
+.quick-sec .quick-parent .tutor-sec div p{
+    font-weight: 300;
+    color: var(--text-color-3);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 5px;
+    margin: 0px 5px;
+    line-height: 24px;
+}
+
+.quick-sec .quick-parent .tutor-sec div a{
+    font-weight: 300;
+    color: var(--bg-color-1);
+    background-color: var(--header-color-1-light);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 10px 5px;
+}
+
+.quick-sec .quick-parent .tutor-sec div a:hover{
+    color: var(--small-baner);
+    background-color: var(--header-color-1-dark);
+}
+
+
+.courses-sec h1{
+    margin: 20px 0;
+    font-size: 22px;
+    font-family: inherit;
+    color: var(--text-color-2);
+}
+
+.courses-parent{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat( 3, minmax(18rem, 1fr));
+    gap:1rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px 0 0 0;
+}
+
+
+.course-box{
+    padding: 20px;
+    background-color: var(--bg-color-1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-size: inherit;
+    text-wrap: wrap;
+}
+
+.course-box-header{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.course-box-header img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 10px 0 0;
+}
+
+.course-box-header div span{
+    color: var(--text-color-2);
+    font-weight: 600;
+}
+
+.course-box-header div p{
+    color: var(--text-color-3);
+}
+
+.course-box-image{
+    width: 100%;
+    position: relative;
+    margin: 20px 0 10px 0;
+}
+
+.course-box-image img{
+    width: 100%;
+    object-fit: cover;
+    height: 160px;
+    border-radius: 5px;
+}
+
+.course-box-image span{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--small-baner);
+    background-color: var(--bg-color-3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.course-box h2{
+    font-size: inherit;
+    color: var(--text-color-2);
+    margin: 0 0 10px 0;
+    text-wrap: nowrap;
+}
+
+.course-box a{
+    border: none;
+    width: fit-content;
+    background-color: var(--header-color-1-light);
+    color: var(--bg-color-2);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.course-box a:hover{
+    background-color: var(--header-color-1-dark);
+    color: var(--small-baner);
+}
+
+img{
+    width: 100px;
+}
+
+/* other */
+
+.bage-body > div{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    margin: 30px 0 0 0;
+    text-decoration: none;
+    color: var(--bg-color-1);
+    background-color: var(--header-color-1-light);
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn:hover{
+    color: var(--small-baner);
+    background-color: var(--header-color-1-dark);
+}
+
+/* footer */
+
+.footer{
+    width: calc(100% - 60px);
+    height: 60px;
+    position: sticky;
+    bottom: 0;
+    float: right;
+    background-color: var(--bg-color-1);
+    transition: width .2s linear;
+    color: var(--text-color-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1.5px;
+    border-top: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.footer.active{
+    width: calc(100% - 220px);
+}
+
+.footer .span{
+    color: var(--header-color-1-dark);
+    font-size: 500;
+}
+
+/* teacher */
+
+.teacher-box{
+    height: fit-content;
+}
+
+.teacher-box .teacher-div{
+    padding: 20px 0;
+    background-color: var(--bg-color-1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-size: inherit;
+    text-wrap: wrap;
+    gap: 1rem;
+}
+
+.teacher-box .teacher-div p{
+    font-weight: 300;
+    color: var(--text-color-3);
+    margin: 0;
+}
+
+.teacher-box .teacher-div p span{
+    font-weight: 500;
+    color: var(--text-color-1);
+    margin: 0;
+}
+
+.courses-sec .tutor-sec{
+    background-color: var(--bg-color-1);
+    border-radius: 10px;
+}
+
+.courses-sec .tutor-sec > div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.courses-sec .tutor-sec > div p{
+    line-height: 24px;
+}
+
+.courses-sec .tutor-sec h3{
+    font-weight: 600;
+    color: var(--text-color-2);
+    margin: 20px 0 20px 20px;
+}
+
+.courses-sec .tutor-sec div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0 15px 15px 15px;
+}
+
+.courses-sec .tutor-sec div p{
+    font-weight: 300;
+    color: var(--text-color-3);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 5px;
+    margin: 0px 5px;
+}
+
+.courses-sec .tutor-sec div a{
+    font-weight: 300;
+    color: var(--bg-color-2);
+    background-color: var(--header-color-1-light);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 10px 5px;
+}
+.courses-sec .tutor-sec div a:hover{
+    background-color: var(--header-color-1-dark);
+    color: var(--small-baner);
+}
+
+
+/* about */
+
+.bage-body .about{
+    max-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.bage-body .about > div{
+    width: 50%;
+    object-fit: cover;
+}
+
+.bage-body .about .about-img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.bage-body .about .about-text{
+    width: 50%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bage-body .about .about-text h1{
+    color: var(--text-color);
+    font-size: 30px;
+}
+
+.bage-body .about .about-text p{
+    color: var(--text-color);
+    font-size: 18px;
+    line-height: 24px;
+    text-wrap: wrap;
+    letter-spacing: 1.5px;
+}
+
+.bage-body .about .about-text a{
+    font-weight: 300;
+    color: var(--bg-color-1);
+    background-color: var(--header-color-1-light);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+.bage-body .about .about-text a:hover{
+    color: var(--small-baner);
+    background-color: var(--header-color-1-dark);
+}
+
+.bage-body .about-2{
+    margin: 30px 0 0 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-2 > div{
+    background-color: var(--bg-color-1);
+    height: auto-fit;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    color: var(--text-color-2);
+}
+
+.about-2 > div i{
+    padding: 20px 20px 20px 0;
+    font-size: 50px;
+    color: var(--header-color-1-dark);
+}
+
+.about-2 > div div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-wrap: wrap;
+}
+
+.about-2 > div div p{
+    color: var(--text-color-3);
+    line-height: 24px;
+    letter-spacing: 1.5px;
+}
+
+.about-box > div > p{
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--text-color-3);
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    text-wrap: wrap;
+}
+
+.about-box > div > div > p {
+    color: rgb(255, 204, 0);
+}
+
+
+/* contact */
+.contact{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact .contact-img{
+    width: 50%;
+}
+
+.contact > div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-color-1);
+    border-radius: 8px;
+    margin: 0 20px;
+}
+
+.contact > div form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px;
+    align-items: center;
+}
+
+.contact > div form h2{
+    color: var(--text-color-2);
+    margin: 0 0 20px 0;
+}
+
+.contact > div form input{
+    border: none;
+    outline: none;
+    background-color: var(--bg-color-2);
+    padding: 15px 25px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.contact > div form textarea{
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: var(--bg-color-2);
+    padding: 15px 25px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 17px;
+    color: var(--text-color);
+    height: 200px;
+    font-family: inherit;
+}
+
+.contact > div form input[type="submit"]{
+    border: none;
+    outline: none;
+    background-color: var(--header-color-1-light);
+    padding: 15px 25px;
+    width: fit-content;
+    border-radius: 8px;
+    font-size: 17px;
+    color: var(--bg-color-2);
+    font-family: inherit;
+}
+
+.contact > div form input[type="submit"]:hover{
+    background-color: var(--header-color-1-dark);
+    color: var(--small-baner);
+}
+
+.bage-body .contact-final-sec{
+    margin: 30px 0 0 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.bage-body .contact-final-sec > div{
+    background-color: var(--bg-color-1);
+    width: 20rem;
+    height: auto-fit;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-color-2);
+}
+
+.bage-body .contact-final-sec > div > i{
+    font-size: 30px;
+}
+
+.bage-body .contact-final-sec > div > a{
+    text-decoration: none;
+    color: var(--header-color-1-light);
+}
+
+.bage-body .contact-final-sec > div > a:hover{
+    text-decoration: underline;
+}
+
+
+/* login */
+
+.form{
+    background-color: var(--bg-color-1);
+    border-radius: 10px;
+    max-width: 35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px 20px 0;
+    align-items: center;
+    margin: 30px auto 0;
+}
+.form > form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+.form > form h2{
+    color: var(--text-color-2);
+    margin: 0 auto 20px;
+}
+
+.form > form input{
+    border: none;
+    outline: none;
+    background-color: var(--bg-color-2);
+    padding: 15px 25px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.form > form label{
+    color: var(--text-color-2);
+    font-size: 17px;
+    margin: 20px 0 0 0;
+}
+
+.form > form textarea{
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: var(--bg-color-2);
+    padding: 15px 25px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 17px;
+    color: var(--text-color);
+    height: 200px;
+    font-family: inherit;
+}
+
+.form > form input[type="submit"]{
+    border: none;
+    outline: none;
+    background-color: var(--header-color-1-light);
+    padding: 15px 30px;
+    width: fit-content;
+    border-radius: 8px;
+    font-size: 17px;
+    color: var(--bg-color-2);
+    font-family: inherit;
+    margin: 20px auto 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.form > form input[type="submit"]:hover{
+    background-color: var(--header-color-1-dark);
+    color: var(--small-baner);
+}
+
+.form > form div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.form > form div p{
+    color: var(--text-color-3);
+}
+
+.form > form div a{
+    color: var(--header-color-1-dark);
+}
+
+.form > form div a:hover{
+    text-decoration: underline;
+}
+
+
+/* profile-t */
+
+.frist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-1);
+    border-radius: 10px;
+}
+
+.frist .profile-box-1{
+    width: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.frist .profile-box-1 img{
+    height: 300px;
+    display: flex;
+    position: relative;
+    object-fit: cover;
+}
+
+.frist .profile-box-1 .profile-save-btn button{
+    padding: 10px 20px 10px 5px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background-color: var(--bg-color-2);
+    border-radius: 6px;
+}
+
+.frist .profile-box-1 .profile-save-btn button i{
+    margin: 0px 5px;
+    color: var(--text-color);
+}
+
+.frist .profile-box-1 .profile-save-btn button span{
+    color: var(--text-color-3);
+}
+
+.frist .profile-box-2{
+    width: 50%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.frist .profile-box-2 p{
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    text-wrap: wrap;
+}
+
+.second .part-box{
+    padding: 5px 20px;
+}
+
+.second .part-box:hover{
+    opacity: 0.8;
+    filter: saturate(130%);
+}
+
+.second a {
+    padding: 0;
+}
+
+.second a .part-box{
+    padding: 5px 20px;
+    margin: 0;
+}
+
+
+.profile-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-1);
+    border-radius: 10px;
+    margin: 20px 0;
+    height: fit-content;
+}
+
+.profile-box a{
+    margin: 20px 0;
+}
+
+.profile-box .div{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.profile-box > div h2 , .profile-box > div p{
+    margin: 0;
+
+}
+
+.profile-box > div > img{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    object-fit: cover;
+}
+
+.profile-box .final-sec-2{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 0.8fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px 0 0 0;
+    width: 100%;
+}
+
+.final-sec-2 > div{
+    background-color: var(--bg-color-2);
+    height: auto-fit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 8px;
+    padding: 20px 20px 5px;
+    color: var(--text-color-3);
+}
+
+.final-sec-2 > div > div {
+    background-color: var(--bg-color-2);
+    height: auto-fit;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    gap: 1rem;
+    color: var(--text-color-3);
+}
+
+.final-sec-2 > div > div i{
+    color: var(--border-color);
+    background-color: var(--header-color-1-light);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.final-sec-2 > div > div > div{
+    background-color: var(--bg-color-2);
+    height: auto-fit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 8px;
+    color: var(--text-color-3);
+}
+
+.final-sec-2 > div > div > div span{
+    color: var(--header-color-1-dark);
+    font-weight: 600;
+}
+
+.final-sec{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 0.8fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 30px 0 0 0;
+    width: 100%;
+}
+
+.final-sec > div{
+    background-color: var(--bg-color-2);
+    height: auto-fit;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    padding: 10px 15px;
+    gap: 1rem;
+    color: var(--text-color-3);
+}
+
+.final-sec > div > span{
+    color: var(--header-color-1-dark);
+    font-weight: 600;
+}
+
+/* video */
+
+.frist-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color-1);
+    border-radius: 10px;
+}
+
+.frist-2 .profile-box-1{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.frist-2 .profile-box-1 video{
+    width: 100%;
+    display: flex;
+    position: relative;
+    object-fit: cover;
+}
+
+.frist-2 .profile-box-1 > div > span{
+    display: none;
+}
+
+.frist-2 .profile-box-1 .profile-save-btn button{
+    padding: 10px 20px 10px 5px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background-color: var(--bg-color-2);
+    border-radius: 6px;
+}
+
+.frist-2 .profile-box-1 .profile-save-btn button i{
+    margin: 0px 5px;
+    color: var(--text-color);
+}
+
+.frist-2 .profile-box-1 .profile-save-btn button span{
+    color: var(--text-color-3);
+}
+
+.frist-2 .profile-box-2{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.frist-2 .profile-box-2 p{
+    letter-spacing: 1.5px;
+    line-height: 24px;
+    text-wrap: wrap;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color-1);
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10px;
+    margin:  20px;
+    padding: 20px;
+    width: 100%;
+    height: fit-content;
+}
+
+.comments div{
+    width: 100%;
+}
+
+.comments div h2{
+    font-size: 20px;
+    color: var(--text-color-2);
+    margin: 0 0 20px 0;
+}
+
+.comments div textarea{
+    font-size: 16px;
+    color: var(--text-color);
+    margin: 0 0 20px 0;
+    background-color: var(--bg-color-2);
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.comments div button{
+    font-size: 16px;
+    color: var(--bg-color-1);
+    background-color: var(--header-color-1-light);
+    border: none;
+    outline: none;
+    resize: none;
+    width: fit-content;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.comments div button:hover{
+    color: var(--small-baner);
+    background-color: var(--header-color-1-dark);
+}
+
+#del-btn{
+    background-color: #ae0404;
+    color: white;
+    margin: 30px 0 0 10px;
+}
+
+#del-btn:hover{
+    background-color: #760202;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.margin-top-60{
+    margin-top: 60px;
+}
+
+
+.s-p{
+    position: relative;
+}
+
+.p-s{
+    background-color: var(--bg-color-2);
+    padding: 15px 25px;
+    color: var(--text-color-3);
+    border-radius: 8px;
+    margin: 30px 0px;
+    width: 100%;
+}
+
+.d-s{
+    position: absolute;
+    background-color: var(--bg-color-2);
+    height: 15px;
+    width: 15px;
+    clip-path: polygon(0 100%, 50% 0, 100% 100%);
+    top: -11px;
+    left: 18px;
+    
+}
+
+
+/*  */
+
+.hidden{
+    display: none;
+}
+
+.appear{
+    display: block;
+}
+
+
+/* media_query */
+
+@media only screen and (max-width: 1200px) {
+    .bage-body{
+        margin-left: 60px;
+        transition: .2s linear;
+        font-size: inherit;
+        width: calc(100% - 60px);
+        padding: 30px 100px;
+        backdrop-filter: unset;
+    }
+    
+    
+    .bage-body.active{
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 30px minmax(10px, 60px);
+    }
+    
+    .courses-parent{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(15rem, 0.8fr));
+        gap:1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .bage-body{
+        margin-left: 60px;
+        transition: .2s linear;
+        font-size: inherit;
+        width: calc(100% - 60px);
+        padding: 30px 60px;
+        backdrop-filter: unset;
+    }
+    
+
+    .bage-body.active{
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 30px 30px;
+    }
+    
+    .courses-parent{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(15rem, 0.8fr));
+        gap:1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .mini-search-icon{
+        display: block;
+    }
+
+    .header-search{
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: var(--bg-color-1);
+        padding: 6px 20px;
+        z-index: 100;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header-search input{
+        width: 100%;
+    }
+
+    .search-icon{
+        position: absolute;
+        right: 35px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background-color: var(--bg-color-2);
+        color: var(--header-color-1-light);
+        cursor: pointer;
+    }
+
+
+    .header-search.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .bage-body{
+        margin-left: 60px;
+        transition: .2s linear;
+        font-size: inherit;
+        width: calc(100% - 60px);
+        padding: 30px 30px;
+        backdrop-filter: unset;
+    }
+    
+    
+    .bage-body.active{
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 30px 20px;
+    }
+    
+    .courses-parent{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat( 1, minmax(15rem, 0.7fr));
+        gap:1.5rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .footer{
+        font-size: 13px;
+    }
+
+    .contact{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact .contact-img{
+        width: 100%;
+    }
+    
+    .contact > div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: var(--bg-color-1);
+        border-radius: 8px;
+        margin: 0 50px;
+    }
+
+    .frist{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .frist .profile-box-1{
+        width: 100%;
+    }
+
+    .frist .profile-box-2{
+        width: 100%;
+    }
+    
+    .frist .profile-box-1 img{
+        height: 300px;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 576px) {
+
+    body{
+        font-size: 15px;
+    }
+
+    .brand-name{
+        display: none;
+    }
+
+    header{
+        font-size: 17px;
+    }
+
+    svg{
+        width: 50px;
+    }
+
+
+    .header-links ul li{
+        background-color: var(--bg-color-2);
+        padding: 5px 8px;
+        margin: 3px;
+    }
+
+    .mini-search-icon{
+        display: block;
+    }
+
+    .header-search{
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: var(--bg-color-1);
+        padding: 6px 20px;
+        z-index: 100;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header-search input{
+        width: 100%;
+    }
+
+    .search-icon{
+        position: absolute;
+        right: 35px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background-color: var(--bg-color-2);
+        color: var(--header-color-1-light);
+        cursor: pointer;
+    }
+
+
+    .header-search.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    aside nav ul li a{
+        font-size: 15px;
+    }
+
+    .sidebar-footer a{
+        font-size: 18px;
+    }
+
+    .bage-body{
+        padding: 30px 15px;
+    }
+
+    .bage-body.active{
+        margin-left: 60px;
+        padding: 30px 15px;
+        backdrop-filter: blur(10px);
+        width: calc(100% - 60px);
+    }
+    
+    .footer{
+        font-size: 13px;
+    }
+
+    .footer.active{
+        margin-left: 60px;
+        width: calc(100% - 60px);
+    }
+    
+    .courses-parent{
+        grid-template-columns: repeat(1, minmax(15rem, 0.8fr));
+    }
+
+    .course-box h2{
+        font-size: inherit;
+        color: var(--text-color-2);
+        margin: 0 0 10px 0;
+        text-wrap: wrap;
+    }
+
+    .btn{
+        margin: 30px 0 0 0;
+        text-decoration: none;
+        color: var(--bg-color-1);
+        background-color: var(--header-color-1-light);
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .all-rights{
+        display: none;
+    }
+
+    .bage-body .about{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .bage-body .about .about-img{
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    
+    .bage-body .about .about-text{
+        width: 100%;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .contact{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact .contact-img{
+        width: 100%;
+    }
+    
+    .contact > div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: var(--bg-color-1);
+        border-radius: 8px;
+        margin: 0 50px;
+    }
+    
+
+    .frist{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .frist .profile-box-1{
+        width: 100%;
+    }
+
+    .frist .profile-box-2{
+        width: 100%;
+    }
+    
+    .frist .profile-box-1 img{
+        height: 300px;
+    }
+
+}
+
