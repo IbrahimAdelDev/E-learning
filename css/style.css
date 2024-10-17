@@ -1297,8 +1297,8 @@ img{
     justify-content: center;
     align-items: flex-start;
     border-radius: 10px;
-    margin:  20px;
-    padding: 20px;
+    margin:  20px 0;
+    padding: 20PX;
     width: 100%;
     height: fit-content;
 }
